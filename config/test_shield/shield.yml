@@ -1,0 +1,6 @@
+name: test_shield
+display_name: Minimal Test Shield
+author: test
+description: Minimal 1x1 matrix test shield, USB only, no BLE
+features:
+  - keys
