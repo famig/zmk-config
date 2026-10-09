@@ -1,0 +1,28 @@
+#include <zmk/app/boards/shields/keymap.h>
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,matrix_transform = &matrix_transform;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+        row-gpios = <&gpio0 0 GPIO_ACTIVE_HIGH>;
+        col-gpios = <&gpio0 1 GPIO_ACTIVE_HIGH>;
+    };
+
+    matrix_transform: matrix_transform {
+        compatible = "zmk,matrix-transform";
+        rows = <1>;
+        columns = <1>;
+        map = <0 0>;
+    };
+};
+
+&keymap {
+    keymap = <
+        &kp A
+    >;
+};
