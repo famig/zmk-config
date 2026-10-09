@@ -5,15 +5,9 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
 
-      - name: Build ZMK
-        uses: zmkfirmware/zmk-build-action@main
-        with:
-          config: config
